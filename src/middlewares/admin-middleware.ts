@@ -3,8 +3,8 @@ import { ERROR_MSG } from 'lib/constant';
 import { jwtAccessSetup } from 'configs/jwt.config';
 import { checkUserExists } from '@/commands/auth';
 
-// Auth middleware
-export const authMiddleware = (app: Elysia) =>
+// Admin middleware
+export const adminMiddleware = (app: Elysia) =>
 	app.use(jwtAccessSetup).derive(async ({ jwtAccess, headers, error }) => {
 		// check if request has authorization header
 		const authorization = headers['authorization'];
